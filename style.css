@@ -1,0 +1,124 @@
+
+nav.navbar {
+    background-color: blue;
+}
+
+
+.navbar a{
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+#main{
+    height: 90vh;
+    background-image: url('arcade-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+#welcome {
+    color: white;
+}
+
+.center {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#game {
+    width: 70vw; 
+    height: 50vw; 
+    max-width: 1000px;
+    max-height: 70vh;
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow cards to wrap to a new row */
+    justify-content: space-around; /* Center the cards horizontally */
+    background-color:grey;
+    box-shadow: 5px 5px; 
+  }
+
+#start {
+  display: block;
+}
+
+  #leaderboard {
+    width: 60vw; 
+    height: 40vw; 
+    background-color:grey;
+    box-shadow: 5px 5px; 
+  }
+
+.container {
+  width: 12vw; /* 30% of the viewport width */
+  height: 21vw; /* 46% of the viewport width to maintain card aspect ratio */
+  max-width: 130px;
+  max-height: 200px;
+  display: inline-block;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  perspective: 1000px; /* Add a 3D perspective for flipping effect */
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 1s ease-out;
+}
+
+/* Add the flipped class to the container to activate the flip effect */
+.container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #ccc;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.score {
+    font-size: 30px;
+    position: fixed;
+    top: 10%;
+    left: 2%;
+    color: red;
+    z-index: 1;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%; /* Add this to ensure the table takes the full width */
+  z-index: 1;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: blue;
+  color: white;
+}
